@@ -1,5 +1,11 @@
 # Quick note
 I have realized that in the exe form, it takes a while to start the actual code, I am not sure why, so please be patient and do not press enter while waiting as that will trigger the "Not an image!" error
+# Features
+Rotate
+Flip
+Brighten
+Sharpen
+Emboss
 # Usage guide
 ## Basics
 1: Download the .exe from the latest release
