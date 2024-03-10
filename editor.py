@@ -5,7 +5,7 @@ import sys
 from colorama import Fore
 import time
 path = input("Path to image for editing? ")
-imageformats = ['.png', '.jpg', '.jpeg', '.gif']
+imageformats = ['.png', '.jpg', '.jpeg']
 def checkifimg(input):
     endswithformat = False
     for format in imageformats:
