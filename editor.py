@@ -5,7 +5,7 @@ import sys
 from colorama import Fore
 import time
 path = input("Path to image for editing? ")
-imageformats = ['.png', '.jpg', '.jpeg']
+imageformats = ['.png', '.jpg', '.jpeg', '.gif']
 def checkifimg(input):
     endswithformat = False
     for format in imageformats:
@@ -34,12 +34,16 @@ Flip = ""
 Brightness = 0
 Sharpness = 0
 Emboss = 0
+Color = ""
 def setrotate():
     global RotationValue
     RotationValue = customtkinter.CTkInputDialog(text="Value? ", title="Value Request")
     RotationValue = int(RotationValue.get_input())
     if RotationValue == "":
         del RotationValue
+    global Color
+    Color = customtkinter.CTkInputDialog(text="Also, we need a fill color for the background (since a background will exist if you rotate)? e.g: \"yellow\"", title="Value Request")
+    Color = Color.get_input()
 
 def fliphorizontal():
     global Flip
@@ -93,7 +97,7 @@ def destroy():
 if os.path.exists(path):
     image = Image.open(path)
     if RotationValue:
-        image = image.rotate(RotationValue, expand=True, fillcolor=ImageColor.getcolor('yellow','RGB'))
+        image = image.rotate(RotationValue, expand=True, fillcolor=ImageColor.getcolor(Color,'RGB'))
     if Flip:
         if Flip == "H":
             image = image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
