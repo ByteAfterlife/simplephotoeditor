@@ -27,7 +27,7 @@ if checkifimg(path) == False:
 
 app = customtkinter.CTk()
 app.geometry("300x500")
-app.title("Dollarama photo editor")
+app.title("Dollar store photo editor")
 # Defining default values
 RotationValue = 0
 Flip = ""
